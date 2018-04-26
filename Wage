@@ -1,0 +1,16 @@
+DROP DATABASE dtrdb;
+CREATE DATABASE dtrdb;
+USE dtrdb;
+
+DROP TABLE employee;
+DROP TABLE dtr;
+DROP TABLE payroll;
+DROP TABLE deduction;
+DROP TABLE wage;
+
+CREATE TABLE wage(
+	baseSalary			INT NOT NULL;
+	PERA_Compensation	INT NOT NULL;
+	Gross_Compensation	INT NOT NULL;
+	netPay				INT NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
+)
