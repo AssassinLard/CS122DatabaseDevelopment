@@ -2,10 +2,10 @@ DROP DATABASE dtrdb;
 CREATE DATABASE dtrdb;
 USE dtrdb;
 
-DROP TABLE employee;
+DROP TABLE faculty;
 DROP TABLE dtr;
 DROP TABLE payroll;
-DROP TABLE deduction;
+DROP TABLE deductions;
 DROP TABLE wage;
 
 CREATE TABLE wage(
