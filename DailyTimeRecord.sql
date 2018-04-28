@@ -2,7 +2,7 @@
 
 --time - hh:mm:ss -- military time 
 --date - YYYY:MM:DD 
-Create Table dailytimerecord(
+Create Table dtr(
 facultyno     int,
 date   	 	    date Not Null,
 timeIn    	  time,
