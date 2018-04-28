@@ -9,7 +9,7 @@ timeIn    	  time,
 timeOut       time,
 minutesLate   time Default 0, 
 absent        bit Not Null,
-onLeave	 	    bit Not Null
+onLeave	 	    bit Not Null,
 FOREIGN KEY(facultyno) REFERENCES faculty(facultyno)
 );
 /*
