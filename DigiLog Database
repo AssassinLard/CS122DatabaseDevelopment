@@ -6,7 +6,7 @@ DROP TABLE employee;
 DROP TABLE dtr;
 DROP TABLE payroll;
 DROP TABLE deductions;
-DROP TABLE wage;
+DROP TABLE wages;
 
 Create Table employee(
 employeeno  	    Int Not Null Auto_Increment Unique Primary Key,
@@ -22,43 +22,50 @@ exempted_amount   Float(2) Default 50000 Not Null
 
 Create Table deductions(
 codeDescription      Int Not Null Auto_Increment Unique Primary Key,
-facultyno            Int,
 effectivity_date     date Not Null,
 termination_date     date Not Null,
 deducted_amount      Float(2) Default 0,
 total_deductions     Float(2) Default 0 Not Null,
-FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
-CREATE TABLE wage(
-baseSalary		     Float(2) Default 0 NOT NULL;
-pera_compensation	 Float(2) NOT NULL;
-gross_compensation Float(2) NOT NULL;
-netPay		       	 Float(2) NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
+CREATE TABLE wages(
+codeDescription    Int, -- not sure about this foreign key but without this I have 
+                        -- no idea how to connect it with deductions and payroll.
+baseSalary		     Float(2) Default 0 NOT NULL,
+pera_compensation	 Float(2) NOT NULL,
+gross_compensation Float(2) NOT NULL,
+netPay		       	 Float(2) NOT NULL, --Sum of Base Salary, PERA and Gross Compensation
+FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
 );
 
 Create Table payroll(
+employeeno         int,
+codeDescription    int,
 absence_date       date,
 undertime			     time,
 cause   	         Varchar(max),
 division_action 	 Varchar(255),
 basic_deduction    Float(2) Default 0,
 pera_compensation	 Float(2) Default 0,
+PRIMARY KEY (employeeno, codeDescription), 
+FOREIGN KEY(employeeno) REFERENCES employee(employeeno),
+FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
 );
 
 --time - hh:mm:ss -- military time 
 --date - YYYY:MM:DD 
 
 Create Table dtr(
-facultyno     int,
-date   	      date Not Null,
-timeIn        time,
-timeOut       time,
-minutesLate   time Default 0, 
-absent        bit Not Null,
-onLeave	      bit Not Null,
-FOREIGN KEY(facultyno) REFERENCES faculty(facultyno)
+employeeno       int,
+date   	         date Not Null,
+timeIn           time,
+timeOut          time,
+minutesLate      time Default 0, 
+absent           bit Not Null,
+onLeave	         bit Not Null,
+FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
+
 /*
 minutesLate - there is no attribute that
 is specifically for minutes so I made it 
