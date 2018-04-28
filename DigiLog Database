@@ -10,14 +10,14 @@ DROP TABLE wage;
 
 Create Table employee(
 employeeno  	    Int Not Null Auto_Increment Unique Primary Key,
-fname    	    Varchar(255) Not Null,
-lname		    Varchar(255) Not Null,
+fname    	        Varchar(255) Not Null,
+lname		          Varchar(255) Not Null,
 pera        	    Float(2) Default 2000.00 Not Null,
 dateofHiring	    date Not Null,
-dateofRetirement    date,
-position	    Varchar(255) Not Null,
-taxCode		    Varchar(255) Default 'Single' Not Null,
-exempted_amount     Float(2) Default 50000 Not Null
+dateofRetirement  date,
+position	        Varchar(255) Not Null,
+taxCode		        Varchar(255) Default 'Single' Not Null,
+exempted_amount   Float(2) Default 50000 Not Null
 );
 
 Create Table deductions(
@@ -31,10 +31,10 @@ FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
 CREATE TABLE wage(
-baseSalary		Float(2) Default 0 NOT NULL;
-pera_compensation	Float(2) NOT NULL;
-gross_compensation	Float(2) NOT NULL;
-netPay			Float(2) NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
+baseSalary		     Float(2) Default 0 NOT NULL;
+pera_compensation	 Float(2) NOT NULL;
+gross_compensation Float(2) NOT NULL;
+netPay		       	 Float(2) NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
 );
 
 Create Table payroll(
