@@ -9,31 +9,31 @@ DROP TABLE deductions;
 DROP TABLE wage;
 
 CREATE TABLE wage(
-	baseSalary			INT NOT NULL;
-	PERA_Compensation	INT NOT NULL;
-	Gross_Compensation	INT NOT NULL;
-	netPay				INT NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
+baseSalary		Float(2) Default 0 NOT NULL;
+pera_compensation	Float(2) NOT NULL;
+gross_compensation	Float(2) NOT NULL;
+netPay			Float(2) NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
 );
 
 Create Table employee(
 employeeno  	    Int Not Null Auto_Increment Unique Primary Key,
-fname    	 	    Varchar(255) Not Null,
-lname		        Varchar(255) Not Null,
+fname    	    Varchar(255) Not Null,
+lname		    Varchar(255) Not Null,
 pera        	    Float(2) Default 2000.00 Not Null,
-dateofHiring		date Not Null,
+dateofHiring	    date Not Null,
 dateofRetirement    date,
-position		    Varchar(255) Not Null,
-taxCode			    Varchar(255) Default 'Single' Not Null,
-exemptedAmount 		Float(2) Default 50000 Not Null
+position	    Varchar(255) Not Null,
+taxCode		    Varchar(255) Default 'Single' Not Null,
+exempted_amount     Float(2) Default 50000 Not Null
 );
 
 Create Table deductions(
-codeDescription     Int Not Null Auto_Increment Unique Primary Key,
-facultyno           Int,
-effectivityDate   	date Not Null,
-terminationDate	  	date Not Null,
-deductedAmount      Float(2) Default 0,
-total_deductions	  Float(2) Default 0 Not Null,
+codeDescription      Int Not Null Auto_Increment Unique Primary Key,
+facultyno            Int,
+effectivity_date     date Not Null,
+termination_date     date Not Null,
+deducted_amount      Float(2) Default 0,
+total_deductions     Float(2) Default 0 Not Null,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
@@ -41,12 +41,12 @@ FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 --date - YYYY:MM:DD 
 Create Table dtr(
 facultyno     int,
-date   	 	    date Not Null,
-timeIn    	  time,
+date   	      date Not Null,
+timeIn        time,
 timeOut       time,
 minutesLate   time Default 0, 
 absent        bit Not Null,
-onLeave	 	    bit Not Null,
+onLeave	      bit Not Null,
 FOREIGN KEY(facultyno) REFERENCES faculty(facultyno)
 );
 /*
