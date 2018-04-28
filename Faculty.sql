@@ -1,7 +1,7 @@
 
 
-Create Table faculty(
-facultyno  	  		Int Not Null Auto_Increment Unique Primary Key,
+Create Table employee(
+employeeno  	  		Int Not Null Auto_Increment Unique Primary Key,
 fname    	 	    Varchar(255) Not Null,
 lname		        Varchar(255) Not Null,
 pera        	    Float(2) Default 2000.00 Not Null,
