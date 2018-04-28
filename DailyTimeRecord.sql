@@ -3,12 +3,12 @@
 --time - hh:mm:ss -- military time 
 --date - YYYY:MM:DD 
 Create Table DailyTimeRecord(
-date   	 	  date Not Null,
+date   	 	    date Not Null,
 timeIn    	  time,
 timeOut       time,
 minutesLate   time Default 0, 
 absent        bit Not Null,
-onLeave	 	  bit Not Null
+onLeave	 	    bit Not Null
 );
 /*
 minutesLate - there is no attribute that
