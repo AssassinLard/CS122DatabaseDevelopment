@@ -8,13 +8,6 @@ DROP TABLE payroll;
 DROP TABLE deductions;
 DROP TABLE wage;
 
-CREATE TABLE wage(
-baseSalary		Float(2) Default 0 NOT NULL;
-pera_compensation	Float(2) NOT NULL;
-gross_compensation	Float(2) NOT NULL;
-netPay			Float(2) NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
-);
-
 Create Table employee(
 employeeno  	    Int Not Null Auto_Increment Unique Primary Key,
 fname    	    Varchar(255) Not Null,
@@ -37,8 +30,25 @@ total_deductions     Float(2) Default 0 Not Null,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
+CREATE TABLE wage(
+baseSalary		Float(2) Default 0 NOT NULL;
+pera_compensation	Float(2) NOT NULL;
+gross_compensation	Float(2) NOT NULL;
+netPay			Float(2) NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
+);
+
+Create Table payroll(
+absence_date       date,
+undertime			     time,
+cause   	         Varchar(max),
+division_action 	 Varchar(255),
+basic_deduction    Float(2) Default 0,
+pera_compensation	 Float(2) Default 0,
+);
+
 --time - hh:mm:ss -- military time 
 --date - YYYY:MM:DD 
+
 Create Table dtr(
 facultyno     int,
 date   	      date Not Null,
