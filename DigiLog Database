@@ -1,1 +1,81 @@
+DROP DATABASE dtrdb;
+CREATE DATABASE dtrdb;
+USE dtrdb;
+
+DROP TABLE employee;
+DROP TABLE dtr;
+DROP TABLE payroll;
+DROP TABLE deductions;
+DROP TABLE wage;
+
+CREATE TABLE wage(
+	baseSalary			INT NOT NULL;
+	PERA_Compensation	INT NOT NULL;
+	Gross_Compensation	INT NOT NULL;
+	netPay				INT NOT NULL; ---Sum of Base Salary, PERA and Gross Compensation
+);
+
+Create Table employee(
+employeeno  	    Int Not Null Auto_Increment Unique Primary Key,
+fname    	 	    Varchar(255) Not Null,
+lname		        Varchar(255) Not Null,
+pera        	    Float(2) Default 2000.00 Not Null,
+dateofHiring		date Not Null,
+dateofRetirement    date,
+position		    Varchar(255) Not Null,
+taxCode			    Varchar(255) Default 'Single' Not Null,
+exemptedAmount 		Float(2) Default 50000 Not Null
+);
+
+Create Table deductions(
+codeDescription     Int Not Null Auto_Increment Unique Primary Key,
+facultyno           Int,
+effectivityDate   	date Not Null,
+terminationDate	  	date Not Null,
+deductedAmount      Float(2) Default 0,
+total_deductions	  Float(2) Default 0 Not Null,
+FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
+);
+
+--time - hh:mm:ss -- military time 
+--date - YYYY:MM:DD 
+Create Table dtr(
+facultyno     int,
+date   	 	    date Not Null,
+timeIn    	  time,
+timeOut       time,
+minutesLate   time Default 0, 
+absent        bit Not Null,
+onLeave	 	    bit Not Null,
+FOREIGN KEY(facultyno) REFERENCES faculty(facultyno)
+);
+/*
+minutesLate - there is no attribute that
+is specifically for minutes so I made it 
+"int" temporarily. Checking the eerd, 
+it seems that minutesLate is a derived 
+attribute. We could subtract timeIn and
+the time boundary of late but in the case
+that they are not late I'm not sure what 
+to do.
+
+Getting minutes from time:
+Method 1: hour(datefield) * 60 + 
+minute(datefield)
+Method 2: SELECT CONVERT(mi,YourDateHere)
+Method 3: datediff(Mi,datecolumn1,datecolumn1) 
+%1440
+(I'm not sure if they work but
+the internet says they do...)
+
+absent and onLeave - since there is no 
+boolean in sql, I decided to use "bit" 
+which has 3 values, 0, 1, and null. 
+We don't need to worry about null since
+I set both of them as not null.
+According to the data dictionary and eerd,
+there is no primary or foreign key. I'm 
+not sure if we need to revise this but for
+now I didn't assign anything.
+*/
 
