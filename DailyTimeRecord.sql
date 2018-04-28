@@ -2,13 +2,15 @@
 
 --time - hh:mm:ss -- military time 
 --date - YYYY:MM:DD 
-Create Table DailyTimeRecord(
+Create Table dailytimerecord(
+facultyno     int,
 date   	 	    date Not Null,
 timeIn    	  time,
 timeOut       time,
 minutesLate   time Default 0, 
 absent        bit Not Null,
 onLeave	 	    bit Not Null
+FOREIGN KEY(facultyno) REFERENCES faculty(facultyno)
 );
 /*
 minutesLate - there is no attribute that
