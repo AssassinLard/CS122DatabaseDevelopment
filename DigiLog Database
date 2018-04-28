@@ -99,6 +99,7 @@ now I didn't assign anything.
 -- Values from 11-15 are just extra (only if we need them)
 -- Since I dont know the realistic values for exepmted_amount, someone else fill in the values please...
 -- These Values are only for the Table: Employee.
+-- Please check the values for position if they are right.
 
 INSERT INTO employee
 VALUES (001, 'JACO','ABAT', '2009','2018-04-28','2018-04-29','FACULTY','SINGLE', );
