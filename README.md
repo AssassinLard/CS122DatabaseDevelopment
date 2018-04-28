@@ -10,6 +10,7 @@ Specifically:
 - foreign keys (especially if we need to add keys in other tables)
 
 And DigiLog Database is the file where I added everything together so... yeah... go check that.
+I added dummy values for table employee as well except im missing one value (exepmted_amount)
 
 # Employee
 
