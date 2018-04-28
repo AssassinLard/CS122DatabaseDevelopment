@@ -6,14 +6,14 @@ Create Table DailyTimeRecord(
 date   	 	  date Not Null,
 timeIn    	  time,
 timeOut       time,
-minutesLate   time, 
+minutesLate   time Default 0, 
 absent        bit Not Null,
 onLeave	 	  bit Not Null
 );
 /*
 minutesLate - there is no attribute that
 is specifically for minutes so I made it 
-"time" temporarily. Checking the eerd, 
+"int" temporarily. Checking the eerd, 
 it seems that minutesLate is a derived 
 attribute. We could subtract timeIn and
 the time boundary of late but in the case
