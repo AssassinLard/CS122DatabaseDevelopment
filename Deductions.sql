@@ -3,7 +3,7 @@
 
 Create Table deductions(
 codeDescription     Int Not Null Auto_Increment Unique Primary Key,
-facultyno           Int,
+employeeno          Int,
 effectivityDate   	date Not Null,
 terminationDate	  	date Not Null,
 deductedAmount      Float(2) Default 0,
