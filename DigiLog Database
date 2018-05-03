@@ -29,13 +29,13 @@ total_deductions     Float(2) Default 0 Not Null
 );
 
 CREATE TABLE wages(
-codeDescription    Int, -- not sure about this foreign key but without this I have 
+employeeno         Int, -- not sure about this foreign key but without this I have 
                         -- no idea how to connect it with deductions and payroll.
 baseSalary		     Float(2) Default 0 NOT NULL,
 pera_compensation	 Float(2) NOT NULL,
 gross_compensation Float(2) NOT NULL,
 netPay		       	 Float(2) NOT NULL, --Sum of Base Salary, PERA and Gross Compensation
-FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
+FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
 Create Table payroll(
