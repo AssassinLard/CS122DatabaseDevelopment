@@ -21,3 +21,8 @@ I added dummy values for table employee as well except im missing one value (exe
 # Deduction
 
 # Wage
+
+
+In case it gets lost in the Messenger group chat:
+https://drive.google.com/drive/folders/1w7TlFXi8xQYwg-nS1NVj-PH80LV4gHG9
+^^^ DigiLog Interface Assets
