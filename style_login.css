@@ -1,0 +1,89 @@
+body{
+    font-family: Quicksand,courier;
+    font-weight: normal;
+    color: white;
+    background-color: 3545A0;
+}
+#SplashScreen{
+    text-align: center;
+    padding-top: 35%;
+}
+#Time{
+    font-size: 40px;
+}
+#Logo{
+    margin-top: 20px;
+    font-size: 80px;
+}
+#user{
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+#pass{
+    margin-left: 150px;
+    margin-right: 150px;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Quicksand,courier;
+    font-size: 15px;
+}
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Quicksand,courier;
+    font-size: 15px;
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+}
+btn{
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 25px;
+    background-color: 5060CC;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+input[type=submit] {
+    display: block;
+    font-family: Quicksand,courier;
+    border-color: rgba(0, 0, 0, 0.0);
+    display: block;
+    width: 170px;
+    padding: 8px;
+    margin: 20px auto;
+    border-radius: 8px;
+    font-size: 25px;
+    background-color: 5060CC;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+btn:active, input[type=submit]:active{
+    transform: translateY(4px);
+}
+btn:hover, input[type=submit]:hover{
+    background-color: D5DDFF;
+}

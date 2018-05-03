@@ -2,15 +2,21 @@
     <head>
         <meta charset="utf-8">
         <link href="reset.css" rel="stylesheet">
-        <link href="style.css" rel="stylesheet">
+        <link href="style_splash.css" rel="stylesheet">
         <title>DigiLog</title> 
     </head>
     <body onload = "startTime()">
         <div id = "SplashScreen">
             <div id = "Time"></div>
             <p id = "Logo">DigiLog</p>
-            <btn id = "TLog">Teacher Login</btn>
-            <btn id = "ALog">Admin Login</btn>
+            <div id = "buttons">
+                <btn id = "TLog">
+                    <a href="teacher_login.html">Teacher Login</a>
+                </btn>
+                <btn id = "ALog">
+                    <a href="admin_login.html">Admin Login</a>
+                </btn>
+            </div>
         </div>
     </body>
 </html>
@@ -26,7 +32,7 @@ function startTime() {
         stamp = "AM"
     }
     if (h > 12){
-        h = h - 12;
+        h -= 12;
     }
     var m = today.getMinutes();
     var s = today.getSeconds();
