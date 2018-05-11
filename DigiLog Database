@@ -53,8 +53,10 @@ FOREIGN KEY(employeeno) REFERENCES employee(employeeno),
 FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
 );
 
---time - hh:mm:ss -- military time 
---date - YYYY:MM:DD 
+/* time - hh:mm:ss military time 
+   date - YYYY:MM:DD */
+
+/*moved 'undertime', 'cause', and 'division_action' from table 'payroll' to table 'dtr'*/
 
 Create Table dtr(
 employeeno       int,
