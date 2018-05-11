@@ -25,8 +25,9 @@ codeDescription      Int Not Null Auto_Increment Unique Primary Key,
 effectivity_date     date Not Null,
 termination_date     date Not Null,
 deducted_amount      Float(2) Default 0,
-total_deductions     Float(2) Default 0 Not Null
 );
+
+/*Removed total_deduction*/
 
 CREATE TABLE wages(
 employeeno         Int, -- not sure about this foreign key but without this I have 
@@ -34,9 +35,10 @@ employeeno         Int, -- not sure about this foreign key but without this I ha
 baseSalary		     Float(2) Default 0 NOT NULL,
 pera_compensation	 Float(2) NOT NULL,
 gross_compensation Float(2) NOT NULL,
-netPay		       	 Float(2) NOT NULL, --Sum of Base Salary, PERA and Gross Compensation
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
+
+/*Removed net_pay*/
 
 Create Table payroll(
 employeeno         int,
