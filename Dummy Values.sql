@@ -128,7 +128,7 @@ INSERT INTO payroll
 VALUES (003, 103, null, '02:00:00', 'Due to sickness', 'Ask for doctor\'s note', 1220.50, 1200.00):
 
 INSERT INTO payroll
-VALUES (004, 102, null, null, null, null, 990.00, 1000.00);
+VALUES (004, 102, null, null, 'Unknown', 'Ask for cause of lateness', 990.00, 1000.00);
 
 INSERT INTO payroll
 VALUES (005, 108, null, '00:01:00', 'Negligible', 'Negligible', 850.00, 1300.00);
@@ -140,7 +140,7 @@ INSERT INTO payroll
 VALUES (007, 100, '2018-02-01', null, 'Unknown', 'Ask for cause of absence', 1767.50, 1000.00);
 
 INSERT INTO payroll
-VALUES (008, 109, '2018-02-01', '00:30:00', 'Unknown', 'Ask for cause of undertime', 2000.00, 1450.00);
+VALUES (008, 109, null, '00:30:00', 'Unknown', 'Ask for cause of undertime', 2000.00, 1450.00);
 
 INSERT INTO payroll
 VALUES (009, 106, null, null, null, null, 1000.00, 2300.00);
@@ -185,7 +185,7 @@ INSERT INTO dtr
 VALUES (007, '2018-02-01', 0, 0, 0, 1, 0);
 
 INSERT INTO dtr
-VALUES (008, '2018-02-01', '11:35:00', '18:00:00', '00:05:00', 0, 0);
+VALUES (008, '2018-02-01', '11:28:00', '18:00:00', 0, 0, 0);
 
 INSERT INTO dtr
 VALUES (009, '2018-02-01', '11:05:00', '18:34:00', 0, 0, 0);
@@ -197,7 +197,7 @@ INSERT INTO dtr
 VALUES (011, '2018-02-01', '11:00:00', '18:33:20', 0, 0, 0);
 
 INSERT INTO dtr
-VALUES (012, '2018-02-01', '11:55:00', '18:31:30', '00:25:00', 0, 0);
+VALUES (012, '2018-02-01', '11:24:00', '18:31:30', 0, 0, 0);
 
 INSERT INTO dtr
 VALUES (013, '2018-02-01', '11:20:00', '18:40:00', 0, 0, 0);
