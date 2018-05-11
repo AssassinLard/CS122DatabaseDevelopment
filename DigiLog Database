@@ -11,8 +11,6 @@ DROP TABLE wages;
 Create Table employee(
 employeeno  	    Int Not Null Auto_Increment Unique Primary Key,
 pincode           Int Not Null,
-userno            Int,
-teacherno         Int,
 fname    	        Varchar(255) Not Null,
 lname		          Varchar(255) Not Null,
 pera        	    Float(2) Default 2000.00 Not Null,
