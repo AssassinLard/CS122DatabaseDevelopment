@@ -158,10 +158,10 @@ INSERT INTO payroll
 VALUES (013, 104, null, null, null, null, 900.00, 600.00);
 
 INSERT INTO payroll
-VALUES (014, 103, );
+VALUES (014, 103, null, null, null, null, 1220.50, 1760.00 );
 
 INSERT INTO payroll
-VALUES (015, 109);
+VALUES (015, 109, null, null, null, null, 2000.00, 1450.00);
 
 INSERT INTO dtr
 VALUES (001, '2018-02-01', '10:55:00', '18:35:00', 0, 0, 0);
@@ -200,10 +200,10 @@ INSERT INTO dtr
 VALUES (012, '2018-02-01', '11:55:00', '18:31:30', '00:25:00', 0, 0);
 
 INSERT INTO dtr
-VALUES (013, '2018-02-01');
+VALUES (013, '2018-02-01', '11:20:00', '18:40:00', 0, 0, 0);
 
 INSERT INTO dtr
-VALUES (014, '2018-02-01');
+VALUES (014, '2018-02-01', '11:30:00', '18:30:00', 0, 0, 0);
 
 INSERT INTO dtr
-VALUES (015, '2018-02-01');
+VALUES (015, '2018-02-01', '11:29:00, '18:31:30', 0, 0, 0);
