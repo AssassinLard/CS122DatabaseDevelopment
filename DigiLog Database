@@ -46,6 +46,7 @@ FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 Create Table payroll(
 employeeno          int,
 codeDescription     int,
+absent_date         date,
 undertime			      time,
 cause   	          Varchar(255),
 division_action 	  Varchar(255),
@@ -189,19 +190,19 @@ INSERT INTO wages
 VALUES (009, 18750.00, 2300.00, 21050.00);
 
 INSERT INTO payroll 
-VALUES (001, 108, null, null, null, null, 850.00, 2000.00);
+VALUES (001, 108, '2018-02-01', null, null, null, 850.00, 2000.00);
 
 INSERT INTO payroll 
 VALUES (002, 101, null, null, null, null, 2765.00, 1330.00);
 
 INSERT INTO payroll 
-VALUES (003, 103, null, '02:00:00', 'Due to sickness', 'Ask for doctor\'s note', 1220.50, 1200.00):
+VALUES (003, 103, null, '02:00:00', "Due to sickness", "Ask for doctor's note", 1220.50, 1200.00);
 
 INSERT INTO payroll 
 VALUES (004, 102, null, null, 'Unknown', 'Ask for cause of lateness', 990.00, 1000.00);
 
 INSERT INTO payroll 
-VALUES (005, 108, null, '00:01:00', 'Negligible', 'Negligible', 850.00, 1300.00);
+VALUES (005, 106, null, '00:01:00', 'Negligible', 'Negligible', 850.00, 1300.00);
 
 INSERT INTO payroll 
 VALUES (006, 104, '2018-02-01', null, 'On maternity leave', null, 600.00, 2200.00);
@@ -210,16 +211,16 @@ INSERT INTO payroll
 VALUES (007, 100, '2018-02-01', null, 'Unknown', 'Ask for cause of absence', 1767.50, 1000.00);
 
 INSERT INTO payroll 
-VALUES (008, 109, null, '00:30:00', 'Unknown', 'Ask for cause of undertime', 2000.00, 1450.00);
+VALUES (008, 105, null,'00:30:00', 'Unknown', 'Ask for cause of undertime', 2000.00, 1450.00);
 
 INSERT INTO payroll 
-VALUES (009, 106, null, null, null, null, 1000.00, 2300.00);
+VALUES (009, 107, '2018-02-01', null, null, null, 1000.00, 2300.00);
 
 INSERT INTO dtr 
-VALUES (001, '2018-02-01', '10:55:00', '18:35:00', 0, 0, 0);
+VALUES (001, '2018-02-01', null , null, null ,1, 0);
 
 INSERT INTO dtr 
-VALUES (002, '2018-02-01', '11:25:00', '18:32:00', 0 ,0, 0);
+VALUES (002, '2018-02-01', '11:25:00', '18:32:00', '00:18:00' ,0, 0);
 
 INSERT INTO dtr 
 VALUES (003, '2018-02-01', '11:13:00', '16:30:00', 0, 0, 0);
@@ -231,16 +232,16 @@ INSERT INTO dtr
 VALUES (005, '2018-02-01', '11:22:00', '18:29:00', 0, 0, 0);
 
 INSERT INTO dtr 
-VALUES (006, '2018-02-01', 0, 0, 0, 0, 1);
+VALUES (006, '2018-02-01', null, null, null, 0, 1);
 
 INSERT INTO dtr 
-VALUES (007, '2018-02-01', 0, 0, 0, 1, 0);
+VALUES (007, '2018-02-01', null, null, null, 1, 0);
 
 INSERT INTO dtr 
 VALUES (008, '2018-02-01', '11:28:00', '18:00:00', 0, 0, 0);
 
 INSERT INTO dtr 
-VALUES (009, '2018-02-01', '11:05:00', '18:34:00', 0, 0, 0);
+VALUES (009, '2018-02-01', null, null, null, 0, 1);
 
 
 
