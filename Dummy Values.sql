@@ -85,32 +85,32 @@ VALUES (009, 18750.00, 2300.00, 21050.00);
 
 
 
-INSERT INTO payroll
-VALUES (001, 108, null, null, null, 850.00, 2000.00);
+INSERT INTO payroll 
+VALUES (001, 108, 850.00, 2000.00);
 
-INSERT INTO payroll
-VALUES (002, 101, null, null, null, 2765.00, 1330.00);
+INSERT INTO payroll 
+VALUES (002, 101, 2765.00, 1330.00);
 
-INSERT INTO payroll
-VALUES (003, 103, '02:00:00', 'Due to sickness', 'Ask for doctor\'s note', 1220.50, 1200.00):
+INSERT INTO payroll 
+VALUES (003, 103, 1220.50, 1200.00);
 
-INSERT INTO payroll
-VALUES (004, 102, null, 'Unknown', 'Ask for cause of lateness', 990.00, 1000.00);
+INSERT INTO payroll 
+VALUES (004, 102, 990.00, 1000.00);
 
-INSERT INTO payroll
-VALUES (005, 107, '00:01:00', 'Negligible', 'Negligible', 1200.00, 1300.00);
+INSERT INTO payroll 
+VALUES (005, 106, 850.00, 1300.00);
 
-INSERT INTO payroll
-VALUES (006, 104, 'On maternity leave', null, 600.00, 2200.00);
+INSERT INTO payroll 
+VALUES (006, 104,600.00, 2200.00);
 
-INSERT INTO payroll
-VALUES (007, 100, null, 'Unknown', 'Ask for cause of absence', 1767.50, 1000.00);
+INSERT INTO payroll 
+VALUES (007, 100, 1767.50, 1000.00);
 
-INSERT INTO payroll
-VALUES (008, 105, '00:30:00', 'Unknown', 'Ask for cause of undertime', 550.00, 1450.00);
+INSERT INTO payroll 
+VALUES (008, 105, 2000.00, 1450.00);
 
-INSERT INTO payroll
-VALUES (009, 106, null, null, null, 1000.00, 2300.00);
+INSERT INTO payroll 
+VALUES (009, 107, 1000.00, 2300.00);
 
 
 
@@ -144,41 +144,123 @@ VALUES (009, '2018-02-01', '11:05:00', '18:34:00', 0, 0, 0);
 
 /* OTHER DUMMY DATA */
 
-INSERT INTO payroll
-VALUES (001, 108, null, null, null, 850.00, 2000.00);
+INSERT INTO payroll 
+VALUES (001, 108, 850.00, 2000.00);
 
-INSERT INTO payroll
-VALUES (002, 101, null, null, null, 2765.00, 1330.00);
+INSERT INTO payroll 
+VALUES (002, 101, 2765.00, 1330.00);
 
-INSERT INTO payroll
-VALUES (003, 103, '02:00:00', 'Due to sickness', 'Ask for doctor\'s note', 1220.50, 1200.00):
-
-
-INSERT INTO dtr
-VALUES (001, '2018-02-01', '10:55:00', '18:35:00', 0, 0, 0);
-
-INSERT INTO dtr
-VALUES (002, '2018-02-01', '11:25:00', '18:32:00', 0 ,0, 0);
-
-INSERT INTO dtr
-VALUES (003, '2018-02-01', '11:13:00', '16:30:00', 0, 0, 0);
+INSERT INTO payroll 
+VALUES (003, 103, 1220.50, 1200.00);
 
 
 INSERT INTO dtr
-VALUES (001, '2018-02-02', '11:40:00', '18:33:00', '00:10:00', 0, 0);
+VALUES (001, '2018-02-01', '10:55:00', '18:35:00', 0, 0, 0, 0, null, null);
 
 INSERT INTO dtr
-VALUES (002, '2018-02-02', '11:27:00', '18:35:00', 0, 0, 0);
+VALUES (002, '2018-02-01', '11:25:00', '18:32:00', 0 ,0, 0, 0, null, null);
 
 INSERT INTO dtr
-VALUES (003, '2018-02-02', 0, 0, 0, 1, 0);
+VALUES (003, '2018-02-01', '11:13:00', '16:30:00', 0, '02:00:00', 0, 0, 'Due to sickness', 'Ask for proof or documentation');
 
 
 INSERT INTO dtr
-VALUES (001, '2018-02-03', '11:28:00', '17:30:00', 0, 0, 0); /*UNDER TIME*/
+VALUES (001, '2018-02-02', '11:40:00', '18:33:00', '00:10:00', 0, 0, 0, null, 'Give warning');
 
 INSERT INTO dtr
-VALUES (002, '2018-02-03', 0, 0, 0, 1, 0);
+VALUES (002, '2018-02-02', '11:27:00', '18:35:00', 0, 0, 0, 0, null, null);
 
 INSERT INTO dtr
-VALUES (003, '2018-02-03', '11:50:00', '18:32:00", '00:20:00', 0, 0);
+VALUES (003, '2018-02-02', 0, 0, 0, 0, 1, 0, 'Due to sickness', 'Ask for proof or documentation');
+
+
+INSERT INTO dtr
+VALUES (001, '2018-02-03', '11:28:00', '17:30:00', 0, '01:00:00', 0, 0, null , 'Give warning'); 
+
+INSERT INTO dtr
+VALUES (002, '2018-02-03', 0, 0, 0, 0, 1, 0, 'Due to death in family', 'Ask for proof or documentation');
+
+INSERT INTO dtr
+VALUES (003, '2018-02-03', '11:50:00', '18:32:00', '00:20:00', 0, 0, 0, null, 'Give warning tardiness warning');
+
+        
+        -- Extra Values:
+
+INSERT INTO employee 
+VALUES (010, 6834,'NIGEL YU','2910', '2012-07-15',null,'FACULTY', 'WIDOWER', 42593);
+
+INSERT INTO employee 
+VALUES (011, 2784,'JAKE','CHENG', '4020','2014-06-14','2019-02-18','FACULTY','MARRIED',35000 );
+
+INSERT INTO employee 
+VALUES (012, 4756, 'CARLO','ACOSTA', '3921','2016-05-13','2020-03-17','FACULTY','WIDOWER', 39303);
+
+INSERT INTO employee 
+VALUES (013, 2039, 'ALEC','AQUINO', '3522','2018-04-12','2022-04-16','ADMIN','WIDOWER', 54999);
+
+INSERT INTO employee 
+VALUES (014, 1738,'CHRIS','DIZON', '4123','2017-03-11',null,'FACULTY','MARRIED', 46666);
+
+INSERT INTO employee 
+VALUES (015, 0284, 'MIK','FUENTES', '4324','2015-02-10','2018-12-10','FACULTY','SINGLE', 38293);
+
+INSERT INTO deductions 
+VALUES (109, '2017-03-11', '2019-03-11', 2000.00);
+
+INSERT INTO wages 
+VALUES (010, 20000.00, 1500.00, 21500.00);
+
+INSERT INTO wages 
+VALUES (011, 17660.00, 1200.00, 19660.00);
+
+INSERT INTO wages 
+VALUES (012, 17500.00, 1750.00, 19250.00);
+
+INSERT INTO wages 
+VALUES (013, 19870.00, 900.00, 20770.00);
+
+INSERT INTO wages 
+VALUES (014, 18230.00, 1760.00, 19990.00);
+
+INSERT INTO wages 
+VALUES (015, 18860.00, 1450.00, 20310.00);
+
+INSERT INTO payroll 
+VALUES (010, 105, null, null, null, null, 550.00, 1500.00);
+
+INSERT INTO payroll 
+VALUES (011, 107, null, null, null, null, 1200.00 ,1200.00);
+
+INSERT INTO payroll 
+VALUES (012, 101, null, null, null, null, 2765.00, 1750.00);
+
+INSERT INTO payroll 
+VALUES (013, 104, null, null, null, null, 900.00, 600.00);
+
+INSERT INTO payroll 
+VALUES (014, 103, null, null, null, null, 1220.50, 1760.00 );
+
+INSERT INTO payroll 
+VALUES (015, 109, null, null, null, null, 2000.00, 1450.00);
+
+INSERT INTO dtr 
+VALUES (010, '2018-02-01', '10:51:00', '18:32:00', 0, 0, 0);
+
+INSERT INTO dtr 
+VALUES (011, '2018-02-01', '11:00:00', '18:33:20', 0, 0, 0);
+
+INSERT INTO dtr 
+VALUES (012, '2018-02-01', '11:24:00', '18:31:30', 0, 0, 0);
+
+INSERT INTO dtr 
+VALUES (013, '2018-02-01', '11:20:00', '18:40:00', 0, 0, 0);
+
+INSERT INTO dtr 
+VALUES (014, '2018-02-01', '11:30:00', '18:30:00', 0, 0, 0);
+
+INSERT INTO dtr 
+VALUES (015, '2018-02-01', '11:29:00, '18:31:30', 0, 0, 0);
+
+
+
+
