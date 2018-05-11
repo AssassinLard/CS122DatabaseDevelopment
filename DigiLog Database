@@ -69,6 +69,8 @@ onLeave	         bit Not Null,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
+/*official time is 11:30am to 6:30pm*/
+
 /*
 minutesLate - there is no attribute that
 is specifically for minutes so I made it 
