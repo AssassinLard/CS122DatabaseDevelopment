@@ -95,6 +95,12 @@ INSERT INTO wages
 VALUES (007, 21950.00, 1000.00, 22950.00);
 
 INSERT INTO wages
+VALUES (008, 17850.00, 1450.00, 19300.00);
+
+INSERT INTO wages
+VALUES (009, 18750.00, 2300.00, 21050.00);
+
+INSERT INTO wages
 VALUES (010, 20000.00, 1500.00, 21500.00);
 
 INSERT INTO wages
@@ -125,7 +131,7 @@ INSERT INTO payroll
 VALUES (004, 102, null, null, null, null, 990.00, 1000.00);
 
 INSERT INTO payroll
-VALUES (005, 108, null, '00:01:00', 'NEGLIGIBLE', 'NEGLIGIBLE', 850.00, 1300.00);
+VALUES (005, 108, null, '00:01:00', 'Negligible', 'Negligible', 850.00, 1300.00);
 
 INSERT INTO payroll
 VALUES (006, 104, '2018-02-01', null, 'On maternity leave', null, 600.00, 2200.00);
@@ -134,7 +140,28 @@ INSERT INTO payroll
 VALUES (007, 100, '2018-02-01', null, 'Unknown', 'Ask for cause of absence', 1767.50, 1000.00);
 
 INSERT INTO payroll
-VALUES (010, 105, null, null, null, null, 550.00, 1500.00); 
+VALUES (008, 109, '2018-02-01', '00:30:00', 'Unknown', 'Ask for cause of undertime', 2000.00, 1450.00);
+
+INSERT INTO payroll
+VALUES (009, 106, null, null, null, null, 1000.00, 2300.00);
+
+INSERT INTO payroll
+VALUES (010, 105, null, null, null, null, 550.00, 1500.00);
+
+INSERT INTO payroll
+VALUES (011, 107, null, null, null, null, 1200.00 ,1200.00);
+
+INSERT INTO payroll
+VALUES (012, 101, null, null, null, null, 2765.00, 1750.00);
+
+INSERT INTO payroll
+VALUES (013, 104, null, null, null, null, 900.00, 600.00);
+
+INSERT INTO payroll
+VALUES (014, 103, );
+
+INSERT INTO payroll
+VALUES (015, 109);
 
 INSERT INTO dtr
 VALUES (001, '2018-02-01', '10:55:00', '18:35:00', 0, 0, 0);
@@ -158,19 +185,19 @@ INSERT INTO dtr
 VALUES (007, '2018-02-01', 0, 0, 0, 1, 0);
 
 INSERT INTO dtr
-VALUES (008, '2018-02-01');
+VALUES (008, '2018-02-01', '11:35:00', '18:00:00', '00:05:00', 0, 0);
 
 INSERT INTO dtr
-VALUES (009, '2018-02-01');
+VALUES (009, '2018-02-01', '11:05:00', '18:34:00', 0, 0, 0);
 
 INSERT INTO dtr
 VALUES (010, '2018-02-01', '10:51:00', '18:32:00', 0, 0, 0);
 
 INSERT INTO dtr
-VALUES (011, '2018-02-01');
+VALUES (011, '2018-02-01', '11:00:00', '18:33:20', 0, 0, 0);
 
 INSERT INTO dtr
-VALUES (012, '2018-02-01');
+VALUES (012, '2018-02-01', '11:55:00', '18:31:30', '00:25:00', 0, 0);
 
 INSERT INTO dtr
 VALUES (013, '2018-02-01');
