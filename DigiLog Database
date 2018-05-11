@@ -28,7 +28,7 @@ termination_date     date Not Null,
 deducted_amount      Float(2) Default 0,
 );
 
-/*Removed total_deduction*/
+/*Removed total_deduction from deductions*/
 
 CREATE TABLE wages(
 employeeno         Int, -- not sure about this foreign key but without this I have 
@@ -39,7 +39,7 @@ gross_compensation Float(2) NOT NULL,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
-/*Removed net_pay*/
+/*Removed net_pay from wages*/
 
 Create Table payroll(
 employeeno         int,
