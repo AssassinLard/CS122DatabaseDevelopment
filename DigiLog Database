@@ -25,7 +25,7 @@ Create Table deductions(
 codeDescription      Int Not Null Auto_Increment Unique Primary Key,
 effectivity_date     date Not Null,
 termination_date     date Not Null,
-deducted_amount      Float(2) Default 0,
+deducted_amount      Float(2) Default 0
 );
 
 /*Removed total_deduction from deductions*/
