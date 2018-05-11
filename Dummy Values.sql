@@ -82,7 +82,7 @@ VALUES (010, 006, null, null, null, null, 550.00, 1500.00);
 INSERT INTO payroll
 VALUES (004, 003, null, null, null, null, 990.00, 1000.00);
 
-INSERY INTO payroll
+INSERT INTO payroll
 VALUES (007, 001, '2018-02-02', null, 'Unknown', 'Ask for cause of absence', 1767.50, 1000.00);
 
 INSERT INTO dtr
