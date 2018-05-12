@@ -26,3 +26,9 @@ I added dummy values for table employee as well except im missing one value (exe
 In case it gets lost in the Messenger group chat:
 https://drive.google.com/drive/folders/1w7TlFXi8xQYwg-nS1NVj-PH80LV4gHG9
 ^^^ DigiLog Interface Assets
+
+
+12 May, 2018
+From AL: Cleaned up the Repository, fixed the Database code
+PENDING: Status of employeeno as FOREIGN KEY
+PENDING: Connection between MySQL and HTML 
