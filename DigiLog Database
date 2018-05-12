@@ -8,24 +8,24 @@ DROP TABLE payroll;
 DROP TABLE deductions;
 DROP TABLE wages;
 
-Create Table employee(
-employeeno  	    Int Not Null Auto_Increment Unique Primary Key,
-pincode           Int Not Null,
-fname    	        Varchar(255) Not Null,
-lname		          Varchar(255) Not Null,
-pera        	    Float(2) Default 2000.00 Not Null,
-dateofHiring	    date Not Null,
-dateofRetirement  date,
-position	        Varchar(255) Not Null,
-taxCode		        Varchar(255) Default 'Single' Not Null,
-exempted_amount   Float(2) Default 50000 Not Null
+CREATE TABLE employee(
+employeeno  	    INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+pincode            INT NOT NULL,
+fname    	       VARCHAR(255) NOT NULL,
+lname		          VARCHAR(255) NOT NULL,
+pera        	    FLOAT(2) DEFAULT 2000.00 NOT NULL,
+dateofHiring	    DATE NOT NULL,
+dateofRetirement   DATE,
+position	          VARCHAR(255) NOT NULL,
+taxCode		       VARCHAR(255) DEFAULT 'Single' NOT NULL,
+exempted_amount    FLOAT(2) DEFAULT 50000 NOT NULL
 );
 
-Create Table deductions(
-codeDescription      Int Not Null Auto_Increment Unique Primary Key,
-effectivity_date     date Not Null,
-termination_date     date Not Null,
-deducted_amount      Float(2) Default 0
+CREATE TABLE deductions(
+codeDescription      INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+effectivity_date     DATE NOT NULL,
+termination_date     DATE NOT NULL,
+deducted_amount      FLOAT(2) DEFAULT 0
 );
 
 /*Removed total_deduction from deductions*/
@@ -34,20 +34,20 @@ deducted_amount      Float(2) Default 0
 -- no idea how to connect it with deductions and payroll.
 
 CREATE TABLE wages(
-employeeno         Int, 
-baseSalary		     Float(2) Default 0 NOT NULL,
-pera_compensation	 Float(2) NOT NULL,
-gross_compensation Float(2) NOT NULL,
+employeeno              INT, 
+baseSalary	            FLOAT(2) DEFAULT 0 NOT NULL,
+pera_compensation       FLOAT(2) NOT NULL,
+gross_compensation      FLOAT(2) NOT NULL,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
 /*Removed net_pay from wages*/
 
-Create Table payroll(
-employeeno          int,
-codeDescription     int,
-basic_deduction     Float(2) Default 0,
-pera_compensation   Float(2) Default 0,
+CREATE TABLE payroll(
+employeeno              INT,
+codeDescription         INT,
+basic_deduction         FLOAT(2) DEFAULT 0,
+pera_compensation       FLOAT(2) DEFAULT 0,
 PRIMARY KEY (employeeno, codeDescription), 
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno),
 FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
@@ -58,18 +58,18 @@ FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
 
 /*moved 'undertime', 'cause', and 'division_action' from table 'payroll' to table 'dtr'*/
 
-Create Table dtr(
-reference_number int Primary Key,
-employeeno       int,
-date   	         date Not Null,
-timeIn           time,
-timeOut          time,
-minutesLate      time Default 0,
-undertime        time Default 0,
-absent           bit Not Null,
-onLeave	         bit Not Null,
-cause   	          Varchar(255),
-division_action 	  Varchar(255),
+CREATE TABLE dtr(
+reference_number          INT PRIMARY KEY
+employeeno                INT,
+date   	                 DATE NOT NULL,
+timeIn                    TIME,
+timeOut                   TIME,
+minutesLate               TIME Default 0,
+undertime                 TIME Default 0,
+absent                    BIT NOT NULL,
+onLeave	                 BIT NOT NULL,
+cause   	                 VARCHAR(255),
+division_action 	        VARCHAR(255),
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
@@ -138,7 +138,6 @@ INSERT INTO employee
 VALUES (009, 0321, 'KENNETH','ALOG', '2301','2010-08-16','2023-12-20','FACULTY','MARRIED', 41101 );
 
 
-
 INSERT INTO deductions  
 VALUES (100, '2017-05-28', '2019-05-28', 1767.50);
 
@@ -165,7 +164,6 @@ VALUES (107, '2017-07-06', '2018-08-15', 1200.00);
 
 INSERT INTO deductions 
 VALUES (108, '2018-09-17', '2019-08-23', 850.00);
-
 
 
 INSERT INTO wages 
@@ -196,7 +194,6 @@ INSERT INTO wages
 VALUES (009, 18750.00, 2300.00, 21050.00);
 
 
-
 INSERT INTO payroll 
 VALUES (001, 108, 850.00, 2000.00);
 
@@ -225,7 +222,6 @@ INSERT INTO payroll
 VALUES (009, 107, 1000.00, 2300.00);
 
 
-
 INSERT INTO dtr
 VALUES (001, 001, '2018-02-01', '10:55:00', '18:35:00', 0, 0, 0, 0, null, null);
 
@@ -234,7 +230,6 @@ VALUES (002, 002, '2018-02-01', '11:25:00', '18:32:00', 0 ,0, 0, 0, null, null);
 
 INSERT INTO dtr
 VALUES (003, 003, '2018-02-01', '11:13:00', '16:30:00', 0, '02:00:00', 0, 0, 'Due to sickness', 'Ask for proof or documentation');
-
 
 INSERT INTO dtr
 VALUES (004, 001, '2018-02-02', '11:40:00', '18:33:00', '00:10:00', 0, 0, 0, null, 'Give warning');
@@ -245,7 +240,6 @@ VALUES (005, 002, '2018-02-02', '11:27:00', '18:35:00', 0, 0, 0, 0, null, null);
 INSERT INTO dtr
 VALUES (006, 003, '2018-02-02', 0, 0, 0, 0, 1, 0, 'Due to sickness', 'Ask for proof or documentation');
 
-
 INSERT INTO dtr
 VALUES (007, 001, '2018-02-03', '11:28:00', '17:30:00', 0, '01:00:00', 0, 0, null , 'Give warning'); 
 
@@ -254,11 +248,6 @@ VALUES (008, 002, '2018-02-03', 0, 0, 0, 0, 1, 0, 'Due to death in family', 'Ask
 
 INSERT INTO dtr
 VALUES (009, 003, '2018-02-03', '11:50:00', '18:32:00', '00:20:00', 0, 0, 0, null, 'Give warning tardiness warning');
-
-
-
-
-
 
 
 -- Extra Values:
@@ -337,6 +326,3 @@ VALUES (014, '2018-02-01', '11:30:00', '18:30:00', 0, 0, 0);
 
 INSERT INTO dtr 
 VALUES (015, '2018-02-01', '11:29:00, '18:31:30', 0, 0, 0);
-
-
-
