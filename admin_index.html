@@ -1,0 +1,107 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <link href="reset.css" rel="stylesheet">
+        <link href="admin_index_style.css" rel="stylesheet">
+    </head>
+    
+    <body onload = "startTime()" >
+
+        <div class="container">
+
+        <header>
+
+            <div class="topnav">
+                <ul>User Number</ul>
+                <ul>
+                    <div id = "SplashScreen">
+                    <div id = "Time"></div>
+                    </div>
+                </ul>
+            </div>	
+            
+        </header>
+
+        <nav class ="side">
+            <a class="tablinks" onclick="openCity(event, 'HOME')">Home</a> 
+            <a class="tablinks" onclick="openCity(event, 'HELP')">Help</a>
+            <a class="tablinks" onclick="openCity(event, 'FACULTY')">Faculty</a>
+            <a class="tablinks" onclick="openCity(event, 'PAYROLL')">Payroll</a>
+            <a class="tablinks" onclick="openCity(event, 'CREDITS')">Credits</a>
+            <a class="tablinks" href="index.html">Logout</a>
+        </nav>
+
+        <div>
+            <article>
+                <div id="HOME" class="tabcontent">
+                  <h3>home</h3>
+                  <p>home</p>
+                </div>
+
+                <div id="HELP" class="tabcontent">
+                  <h3>please help</h3>
+                  <p>im dying</p> 
+                </div>
+
+                <div id="FACULTY" class="tabcontent">
+                  <h3>DIS BITCH EMPTY</h3>
+                  <p>YEET.</p>
+                </div>
+
+                <div id="PAYROLL" class="tabcontent">
+                  <h3>GET PAID</h3>
+                  <p>MOTHERFUCKERS.</p>
+                </div>
+
+                <div id="CREDITS" class="tabcontent">
+                  <h3>RICCI AND ALF FRONT ENDED THIS BITCH</h3>
+                  <p>YEET.</p>
+                </div>
+            </article>
+        </div>
+
+        </body>
+</html>
+<script>
+function startTime() {
+    var today = new Date();
+    var stamp;
+    var h = today.getHours();
+    if (h > 12){
+        stamp = "PM"
+    }
+    else{
+        stamp = "AM"
+    }
+    if (h > 12){
+        h = h - 12;
+    }
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('Time').innerHTML =
+    h + ":" + m + ":" + s + " " + stamp;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>

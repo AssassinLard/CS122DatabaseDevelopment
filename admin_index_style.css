@@ -1,0 +1,115 @@
+div.container {
+    width: 100%;
+	height:754px;
+	background-color:white;
+
+}
+
+body{
+    font-family: Quicksand,courier;
+    font-weight: normal;
+    color: white;
+	background-color: #3545A0;
+    
+}
+
+header {
+    padding: 1em;
+	margin-left: -10px;
+	margin-top: -8px;
+    color: white;
+    background-color: #3545A0;
+    clear: left;
+    text-align: center;
+	overflow:hidden;
+	
+}
+
+nav {
+    float: left;
+	height: 640px;
+    width: 300px;
+    margin-left: -10px;
+    padding: 1em;
+	background-color: #7193DE;
+	text-align: center;
+	overflow:hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+.side a 
+{
+	display:block;
+	text-transform:uppercase;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 50px;
+	text-decoration: none;
+	font-size: 17px;
+	letter-spacing:3px;
+	background-color: #5060CC;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	overflow:auto;
+	margin-top:30px;
+}
+
+.side a:hover
+{
+  background-color: #D5DDFF;
+  color: black;
+}
+
+
+article 
+{
+    margin-left: 320px;
+    padding: 30px;
+	color: black;
+}
+
+.topnav {
+  overflow: auto;
+  background-color: #3545A0;
+  text-transform:uppercase;
+}
+
+.topnav ul
+{
+	display:inline-block;
+}
+
+.topnav a 
+{
+	margin-top:5px;
+	margin-bottom:10px;
+	margin-left:70px;
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 50px;
+	text-decoration: none;
+	font-size: 17px;
+	letter-spacing:3px;
+	background-color: #5060CC;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	overflow:auto;
+}
+
+.topnav a:hover {
+  background-color: #D5DDFF;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #BFD3FF;
+  color: #3545A0;
