@@ -6,7 +6,9 @@ body{
 }
 #SplashScreen{
     text-align: center;
-    padding-top: 35%;
+    padding-top: 15%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 #Time{
     font-size: 40px;

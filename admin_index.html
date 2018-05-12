@@ -6,7 +6,7 @@
         <link href="admin_index_style.css" rel="stylesheet">
     </head>
     
-    <body onload = "startTime()" >
+    <body onload = "startTime()">
 
         <div class="container">
 
@@ -24,39 +24,58 @@
         </header>
 
         <nav class ="side">
-            <a class="tablinks" onclick="openCity(event, 'HOME')">Home</a> 
-            <a class="tablinks" onclick="openCity(event, 'HELP')">Help</a>
-            <a class="tablinks" onclick="openCity(event, 'FACULTY')">Faculty</a>
-            <a class="tablinks" onclick="openCity(event, 'PAYROLL')">Payroll</a>
-            <a class="tablinks" onclick="openCity(event, 'CREDITS')">Credits</a>
+            <a class="tablinks" onclick="openTab(event, 'HOME')">Home</a> 
+            <a class="tablinks" onclick="openTab(event, 'HELP')">Help</a>
+            <a class="tablinks" onclick="openTab(event, 'FACULTY')">Faculty</a>
+            <a class="tablinks" onclick="openTab(event, 'PAYROLL')">Payroll</a>
+            <a class="tablinks" onclick="openTab(event, 'CREDITS')">Credits</a>
             <a class="tablinks" href="index.html">Logout</a>
         </nav>
 
         <div>
             <article>
                 <div id="HOME" class="tabcontent">
-                  <h3>home</h3>
-                  <p>home</p>
+                  <h1>Welcome to DigiLog!<br></h1>
+                    <h2><br><br>Uses:</h2>
+                    <p><br>Checking of Faculty Attendance<br>Checking of Faculty Wage<br><br></p>
+                    <h2><br><br>For use of:</h2>
+                    <p><br>Barangka National High School Admin<br>Barangka National High School Principal<br><br></p>
+                    <h2><br><br>For use within:</h2>
+                    <p><br>Barangka National High School<br><br></p>
+                    <h2><br><br>Created with:</h2>
+                    <p><br>HTML, CSS, PHP, and MySQL<br><br></p>
                 </div>
 
                 <div id="HELP" class="tabcontent">
-                  <h3>please help</h3>
-                  <p>im dying</p> 
+                  <h1>Help and FAQs<br></h1>
+                    <h2><br><br>Can I use this outside of BNHS?</h2>
+                    <p><br>No, this is only accessible within the school.<br><br></p>
+                    <h2><br><br>Can I edit the attendance of teachers?</h2>
+                    <p><br>No, this is only used to check their attendance and calculate the payroll based on that.<br><br></p>
+                    <h2><br><br>Can I edit the formula used to calculate wages?</h2>
+                    <p><br>As of the moment no, but should there be the need to do so, it will be possible in the future after some updates.<br><br></p>
+                    <h2><br><br>Are the calculations done in real time?</h2>
+                    <p><br>Yes, the calculations for wages are done in real time and are based on the login time of teachers.<br><br></p>
                 </div>
 
                 <div id="FACULTY" class="tabcontent">
-                  <h3>DIS BITCH EMPTY</h3>
-                  <p>YEET.</p>
+                  <h1>Filler Faculty</h1>
+                  <p>Filler text</p>
                 </div>
 
                 <div id="PAYROLL" class="tabcontent">
-                  <h3>GET PAID</h3>
-                  <p>MOTHERFUCKERS.</p>
+                  <h1>Filler Payroll</h1>
+                  <p>Filler text</p>
                 </div>
 
                 <div id="CREDITS" class="tabcontent">
-                  <h3>RICCI AND ALF FRONT ENDED THIS BITCH</h3>
-                  <p>YEET.</p>
+                    <h1>Developer Credits<br></h1>
+                    <h2><br><br>Front-end developers:</h2>
+                    <p><br>Alfonso Dolina<br>Ricci Recto<br><br></p>
+                    <h2><br><br>Back-end developers:</h2>
+                    <p><br>Mico Aquino<br>Jennifer Kim<br>Roderick Ko<br>Christian Qui</p>
+                    <h2><br><br>Brought to you by:</h2>
+                    <p><br>The CS122 Students of <br>Ateneo de Manila University <br>SY 2017-2018<br><br></p>
                 </div>
             </article>
         </div>
@@ -90,7 +109,7 @@ function checkTime(i) {
     return i;
 }
 
-function openCity(evt, cityName) {
+function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -100,7 +119,7 @@ function openCity(evt, cityName) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
 

@@ -27,7 +27,7 @@ header {
 
 nav {
     float: left;
-	height: 640px;
+	height: 100%;
     width: 300px;
     margin-left: -10px;
     padding: 1em;
@@ -64,8 +64,9 @@ nav ul a {
 
 .side a:hover
 {
-  background-color: #D5DDFF;
-  color: black;
+    background-color: #D5DDFF;
+    color: black;
+    cursor: pointer;
 }
 
 
@@ -74,6 +75,7 @@ article
     margin-left: 320px;
     padding: 30px;
 	color: black;
+    font-size: 20px;
 }
 
 .topnav {
@@ -113,3 +115,14 @@ article
 .topnav a.active {
   background-color: #BFD3FF;
   color: #3545A0;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bolder;
+}
+h2{
+    font-size: 25px;
+    text-decoration:underline;
+    font-weight: bolder;
+}
