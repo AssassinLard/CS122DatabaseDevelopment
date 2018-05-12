@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+div.container {
+    width: 100%;
+}
+
+body{
+    font-family: Quicksand,courier;
+    font-weight: normal;
+    color: white;
+    
+}
+
+header {
+    padding: 1em;
+	margin-left: -10px;
+	margin-top: -5px;
+	margin-right: -10px;
+    color: white;
+    background-color: #3545A0;
+    clear: left;
+    text-align: center;
+	overflow:auto;
+	
+}
+
+nav {
+    float: left;
+	height: 640px;
+    width: 300px;
+    margin-left: -10px;
+    padding: 1em;
+	background-color: #7193DE;
+	text-align: center;
+	overflow:hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+.side a 
+{
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 50px;
+	text-decoration: none;
+	font-size: 17px;
+	letter-spacing:3px;
+	background-color: #5060CC;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	overflow:auto;
+}
+
+.sidehov:hover
+{
+  background-color: #D5DDFF;
+  color: black;
+}
+
+article {
+    margin-left: 320px;
+    padding: 30px;
+	color:black;
+}
+
+.topnav {
+  overflow: auto;
+  background-color: #3545A0;
+  text-transform:uppercase;
+  padding-left:10px;
+
+  
+  
+}
+
+.topnav a 
+{
+	margin-top:5px;
+	margin-bottom:10px;
+	margin-left:70px;
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 50px;
+	text-decoration: none;
+	font-size: 17px;
+	letter-spacing:3px;
+	background-color: #5060CC;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	overflow:auto;
+}
+
+.topnav a:hover {
+  background-color: #D5DDFF;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #BFD3FF;
+  color: #3545A0;
+  
+  
+</style>
+</head>
+<body onload = "startTime()" >
+
+<div class="container">
+
+<header>
+
+<div class="topnav">
+  <a class="tablinks" onclick="openCity(event, 'HOME')">Home</a> 
+  <a class="tablinks" onclick="openCity(event, 'HELP')">Help</a>
+  <a class="tablinks" onclick="openCity(event, 'FACULTY')">Faculty</a>
+  <a class="tablinks" onclick="openCity(event, 'PAYROLL')">Payroll</a>
+  <a class="tablinks" onclick="openCity(event, 'CREDITS')">credits</a>
+</div>
+</header>
+  
+<nav class ="side">
+<br /><br /><br /><br />
+USER NUMBER<br /><br /><br /><br /><br /><br /><br />
+<div id = "SplashScreen">
+    <div id = "Time"></div>
+	</div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<a class="sidehov" href="index.html"> LOGOUT </a>
+</nav>
+
+<article>
+<div id="HOME" class="tabcontent">
+  <h3>home</h3>
+  <p>home</p>
+</div>
+
+<div id="HELP" class="tabcontent">
+  <h3>please help</h3>
+  <p>im dying</p> 
+</div>
+
+<div id="FACULTY" class="tabcontent">
+  <h3>DIS BITCH EMPTY</h3>
+  <p>YEET.</p>
+</div>
+
+<div id="PAYROLL" class="tabcontent">
+  <h3>GET PAID</h3>
+  <p>MOTHERFUCKERS.</p>
+</div>
+
+<div id="CREDITS" class="tabcontent">
+  <h3>RICCI AND ALF FRONT ENDED THIS BITCH</h3>
+  <p>YEET.</p>
+</div>
+</article>
+
+
+</div>
+
+</body>
+</html>
+<script>
+function startTime() {
+    var today = new Date();
+    var stamp;
+    var h = today.getHours();
+    if (h > 12){
+        stamp = "PM"
+    }
+    else{
+        stamp = "AM"
+    }
+    if (h > 12){
+        h = h - 12;
+    }
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('Time').innerHTML =
+    h + ":" + m + ":" + s + " " + stamp;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>
