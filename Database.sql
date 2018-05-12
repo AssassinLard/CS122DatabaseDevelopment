@@ -59,7 +59,7 @@ FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
 /*moved 'undertime', 'cause', and 'division_action' from table 'payroll' to table 'dtr'*/
 
 CREATE TABLE dtr(
-reference_number          INT PRIMARY KEY
+reference_number          INT NOT NULL Unique Primary Key,
 employeeno                INT,
 date   	                 DATE NOT NULL,
 timeIn                    TIME,
