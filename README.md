@@ -22,9 +22,13 @@ Checking the eerd, it seems that minutesLate is a derived attribute.
 We could subtract timeIn and the time boundary of late but in the case that they are not late I'm not sure what to do.
 
 Getting minutes from time: 
+
 Method 1: hour(datefield) * 60 +  minute(datefield)
+
 Method 2: SELECT CONVERT(mi,YourDateHere)
+
 Method 3: datediff(Mi,datecolumn1,datecolumn1) %1440
+
 (I'm not sure if they work but the internet says they do...)
 
 absent and onLeave - since there is no boolean in sql, I decided to use "bit" which has 3 values, 0, 1, and null. 
@@ -50,9 +54,15 @@ PENDING: Connection between MySQL and HTML
 
 May 13, 2018
 From Alf: Added php connectivity to the admin_index.php file. 
+
 NOTE: Php will only run natively with .php files so all files we need to use php with and access the database need to be in that format.
+
 They're essentially the same as .html files anyway so it shouldn't be too hard to understand.
+
 PENDING: Still don't know how to display the number of lates and absences in the faculty tab, so I'll leave that to Ricci muna. 
+
 PENDING: Will probably convert the other files into .php files just in case.
+
 From AL: Edited the DTR dummy data.
+
 From AL: Edited comments
