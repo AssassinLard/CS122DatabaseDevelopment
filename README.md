@@ -32,3 +32,9 @@ https://drive.google.com/drive/folders/1w7TlFXi8xQYwg-nS1NVj-PH80LV4gHG9
 From AL: Cleaned up the Repository, fixed the Database code
 PENDING: Status of employeeno as FOREIGN KEY
 PENDING: Connection between MySQL and HTML 
+
+May 13, 2018
+From Alf: Added php connectivity to the admin_index.php file. 
+NOTE: Php will only run natively with .php files so all files we need to use php with and access the database need to be in that format. They're essentially the same as .html files anyway so it shouldn't be too hard to understand.
+PENDING: Still don't know how to display the number of lates and absences in the faculty tab, so I'll leave that to Ricci muna. 
+PENDING: Will probably convert the other files into .php files just in case.
