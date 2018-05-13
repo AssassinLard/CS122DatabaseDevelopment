@@ -56,13 +56,8 @@ May 13, 2018
 From Alf: Added php connectivity to the admin_index.php file. 
 
 NOTE: Php will only run natively with .php files so all files we need to use php with and access the database need to be in that format.
-
 They're essentially the same as .html files anyway so it shouldn't be too hard to understand.
 
-PENDING: Still don't know how to display the number of lates and absences in the faculty tab, so I'll leave that to Ricci muna. 
+PENDING: Still don't know how to display the number of lates and absences in the faculty tab, so I'll leave that to Ricci muna. Will probably convert the other files into .php files just in case.
 
-PENDING: Will probably convert the other files into .php files just in case.
-
-From AL: Edited the DTR dummy data.
-
-From AL: Edited comments
+From AL: Edited the DTR dummy data. Edited comments
