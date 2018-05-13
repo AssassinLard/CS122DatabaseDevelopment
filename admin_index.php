@@ -59,27 +59,79 @@
                 </div>
 
                 <div id="FACULTY" class="tabcontent">
-                    <h1>Filler Faculty<br></h1>
+                    <h1>BNHS Faculty<br></h1>
+                    <br><br>
                     <?php
                         $user = 'root';
                         $pass = '';
                         $db = 'dtrdb';
 
                         $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect");
-                        $sql = "SELECT * FROM employee;";
+                        $sql = "SELECT employeeno, CONCAT(fname,' ',lname) 'name' FROM employee;";
                         $result = mysqli_query($db, $sql);
                         $resultCheck = mysqli_num_rows($result);
-                        if($resultCheck > 0){
-                            while ($row = mysqli_fetch_assoc($result)){
-                                echo $row['fname']."<br>";
-                            }
-                        }
+                    ?>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Employee No.</th>
+                          <th>Employee Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                          while( $row = mysqli_fetch_assoc( $result ) ){
+                            echo
+                            "<tr>
+                              <td>{$row['employeeno']}</td>
+                              <td>{$row['name']}</td>
+                            </tr>\n";
+                          }
+                        ?>
+                      </tbody>
+                    </table>
+                    <?php
+                        mysqli_close($db);
                     ?>
                 </div>
 
                 <div id="PAYROLL" class="tabcontent">
-                  <h1>Filler Payroll</h1>
-                  <p>Filler text</p>
+                    <h1>Payroll</h1>
+                    <br><br>
+                    <?php
+                        $user = 'root';
+                        $pass = '';
+                        $db = 'dtrdb';
+
+                        $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect");
+                        $sql = "SELECT employeeno, CONCAT(fname,' ',lname) 'name', exempted_amount 'salary' FROM employee;";
+                        $result = mysqli_query($db, $sql);
+                        $resultCheck = mysqli_num_rows($result);
+                    ?>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Employee No.</th>
+                          <th>Employee Name</th>
+                          <th>Employee Salary (in Peso)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                          while( $row = mysqli_fetch_assoc( $result ) ){
+                            echo
+                            "<tr>
+                              <td>{$row['employeeno']}</td>
+                              <td>{$row['name']}</td>
+                              <td>{$row['salary']}</td>
+                            </tr>\n";
+                          }
+                        ?>
+                      </tbody>
+                    </table>
+                    <?php
+                        mysqli_close($db);
+                    ?>
                 </div>
 
                 <div id="CREDITS" class="tabcontent">

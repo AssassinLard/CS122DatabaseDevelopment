@@ -126,3 +126,26 @@ h2{
     text-decoration:underline;
     font-weight: bolder;
 }
+table{
+    display: block;
+    overflow-y: scroll;
+    border: 5px solid white;
+    background-color: 7193DE; 
+    color: white; 
+    margin: 0 auto;
+    width: 67%;
+    height: 50%;
+    text-align: center;
+}
+tr:nth-child(even){
+    background-color: 5060CC;
+}
+th{
+    padding: 25px;
+    border: solid white;
+    background-color: 3545A0;
+}
+td{
+    padding: 10px;
+    border: solid white;
+}
