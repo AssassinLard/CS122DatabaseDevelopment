@@ -48,11 +48,13 @@ https://drive.google.com/drive/folders/1w7TlFXi8xQYwg-nS1NVj-PH80LV4gHG9
 ^^^ DigiLog Interface Assets
 
 12 May, 2018
+
 From AL: Cleaned up the Repository, fixed the Database code
 
 PENDING: Status of employeeno as FOREIGN KEY, Connection between MySQL and HTML.
 
-May 13, 2018
+13 May, 2018
+
 From Alf: Added php connectivity to the admin_index.php file. 
 
 NOTE: Php will only run natively with .php files so all files we need to use php with and access the database need to be in that format.
