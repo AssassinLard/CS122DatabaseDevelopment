@@ -28,11 +28,6 @@ termination_date     DATE NOT NULL,
 deducted_amount      FLOAT(2) DEFAULT 0
 );
 
-/*Removed total_deduction from deductions*/
-
--- not sure about this foreign key but without this I have 
--- no idea how to connect it with deductions and payroll.
-
 CREATE TABLE wages(
 employeeno              INT, 
 baseSalary	            FLOAT(2) DEFAULT 0 NOT NULL,
@@ -40,8 +35,6 @@ pera_compensation       FLOAT(2) NOT NULL,
 gross_compensation      FLOAT(2) NOT NULL,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
-
-/*Removed net_pay from wages*/
 
 CREATE TABLE payroll(
 employeeno              INT,
@@ -52,11 +45,6 @@ PRIMARY KEY (employeeno, codeDescription),
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno),
 FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
 );
-
-/* time - hh:mm:ss military time 
-   date - YYYY:MM:DD */
-
-/*moved 'undertime', 'cause', and 'division_action' from table 'payroll' to table 'dtr'*/
 
 CREATE TABLE dtr(
 reference_number          INT NOT NULL Unique Primary Key,
@@ -72,43 +60,6 @@ cause   	                 VARCHAR(255),
 division_action 	        VARCHAR(255),
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
-
-/*official time is 11:30am to 6:30pm*/
-
-/*
-minutesLate - there is no attribute that
-is specifically for minutes so I made it 
-"int" temporarily. Checking the eerd, 
-it seems that minutesLate is a derived 
-attribute. We could subtract timeIn and
-the time boundary of late but in the case
-that they are not late I'm not sure what 
-to do.
-
-Getting minutes from time:
-Method 1: hour(datefield) * 60 + 
-minute(datefield)
-Method 2: SELECT CONVERT(mi,YourDateHere)
-Method 3: datediff(Mi,datecolumn1,datecolumn1) 
-%1440
-(I'm not sure if they work but
-the internet says they do...)
-
-absent and onLeave - since there is no 
-boolean in sql, I decided to use "bit" 
-which has 3 values, 0, 1, and null. 
-We don't need to worry about null since
-I set both of them as not null.
-According to the data dictionary and eerd,
-there is no primary or foreign key. I'm 
-not sure if we need to revise this but for
-now I didn't assign anything.
-*/
-
--- Values from 11-15 are just extra (only if we need them)
--- Since I dont know the realistic values for exepmted_amount, someone else fill in the values please...
--- These Values are only for the Table: Employee.
--- Please check the values for position if they are right.
 
 INSERT INTO employee 
 VALUES (001, 0101, "JACO","ABAT", 2009.00,'2018-04-28','2018-04-29',"FACULTY","SINGLE", 45000.00 );
@@ -270,8 +221,10 @@ VALUES (014, 1738,'CHRIS','DIZON', '4123','2017-03-11',null,'FACULTY','MARRIED',
 INSERT INTO employee 
 VALUES (015, 0284, 'MIK','FUENTES', '4324','2015-02-10','2018-12-10','FACULTY','SINGLE', 38293);
 
+
 INSERT INTO deductions 
 VALUES (109, '2017-03-11', '2019-03-11', 2000.00);
+
 
 INSERT INTO wages 
 VALUES (010, 20000.00, 1500.00, 21500.00);
@@ -291,6 +244,7 @@ VALUES (014, 18230.00, 1760.00, 19990.00);
 INSERT INTO wages 
 VALUES (015, 18860.00, 1450.00, 20310.00);
 
+
 INSERT INTO payroll 
 VALUES (010, 105, null, null, null, null, 550.00, 1500.00);
 
@@ -308,6 +262,7 @@ VALUES (014, 103, null, null, null, null, 1220.50, 1760.00 );
 
 INSERT INTO payroll 
 VALUES (015, 109, null, null, null, null, 2000.00, 1450.00);
+
 
 INSERT INTO dtr 
 VALUES (010, '2018-02-01', '10:51:00', '18:32:00', 0, 0, 0);
