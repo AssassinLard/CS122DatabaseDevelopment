@@ -16,6 +16,22 @@ I added dummy values for table employee as well except im missing one value (exe
 
 # DTR
 
+/*
+minutesLate - there is no attribute that is specifically for minutes so I made it "int" temporarily. 
+Checking the eerd, it seems that minutesLate is a derived attribute. 
+We could subtract timeIn and the time boundary of late but in the case that they are not late I'm not sure what to do.
+
+Getting minutes from time: 
+Method 1: hour(datefield) * 60 +  minute(datefield)
+Method 2: SELECT CONVERT(mi,YourDateHere)
+Method 3: datediff(Mi,datecolumn1,datecolumn1) %1440
+(I'm not sure if they work but the internet says they do...)
+
+absent and onLeave - since there is no boolean in sql, I decided to use "bit" which has 3 values, 0, 1, and null. 
+We don't need to worry about null since I set both of them as not null. According to the data dictionary and eerd,
+there is no primary or foreign key. I'm not sure if we need to revise this but for now I didn't assign anything.
+*/
+
 # Payroll
 
 # Deduction
@@ -39,3 +55,4 @@ NOTE: Php will only run natively with .php files so all files we need to use php
 PENDING: Still don't know how to display the number of lates and absences in the faculty tab, so I'll leave that to Ricci muna. 
 PENDING: Will probably convert the other files into .php files just in case.
 From AL: Edited the DTR dummy data.
+From AL: Edited comments
