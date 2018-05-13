@@ -232,22 +232,22 @@ INSERT INTO dtr
 VALUES (003, 003, '2018-02-01', '11:13:00', '16:30:00', 0, '02:00:00', 0, 0, 'Due to sickness', 'Ask for proof or documentation');
 
 INSERT INTO dtr
-VALUES (004, 001, '2018-02-02', '11:40:00', '18:33:00', '00:10:00', 0, 0, 0, null, 'Give warning');
+VALUES (011, 001, '2018-02-02', '11:40:00', '18:33:00', '00:10:00', 0, 0, 0, null, 'Give warning');
 
 INSERT INTO dtr
-VALUES (005, 002, '2018-02-02', '11:27:00', '18:35:00', 0, 0, 0, 0, null, null);
+VALUES (012, 002, '2018-02-02', '11:27:00', '18:35:00', 0, 0, 0, 0, null, null);
 
 INSERT INTO dtr
-VALUES (006, 003, '2018-02-02', 0, 0, 0, 0, 1, 0, 'Due to sickness', 'Ask for proof or documentation');
+VALUES (013, 003, '2018-02-02', 0, 0, 0, 0, 1, 0, 'Due to sickness', 'Ask for proof or documentation');
 
 INSERT INTO dtr
-VALUES (007, 001, '2018-02-03', '11:28:00', '17:30:00', 0, '01:00:00', 0, 0, null , 'Give warning'); 
+VALUES (021, 001, '2018-02-03', '11:28:00', '17:30:00', 0, '01:00:00', 0, 0, null , 'Give warning'); 
 
 INSERT INTO dtr
-VALUES (008, 002, '2018-02-03', 0, 0, 0, 0, 1, 0, 'Due to death in family', 'Ask for proof or documentation');
+VALUES (022, 002, '2018-02-03', 0, 0, 0, 0, 1, 0, 'Due to death in family', 'Ask for proof or documentation');
 
 INSERT INTO dtr
-VALUES (009, 003, '2018-02-03', '11:50:00', '18:32:00', '00:20:00', 0, 0, 0, null, 'Give warning tardiness warning');
+VALUES (023, 003, '2018-02-03', '11:50:00', '18:32:00', '00:20:00', 0, 0, 0, null, 'Give tardiness warning');
 
 
 -- Extra Values:
