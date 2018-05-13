@@ -49,8 +49,8 @@ https://drive.google.com/drive/folders/1w7TlFXi8xQYwg-nS1NVj-PH80LV4gHG9
 
 12 May, 2018
 From AL: Cleaned up the Repository, fixed the Database code
-PENDING: Status of employeeno as FOREIGN KEY
-PENDING: Connection between MySQL and HTML 
+
+PENDING: Status of employeeno as FOREIGN KEY, Connection between MySQL and HTML.
 
 May 13, 2018
 From Alf: Added php connectivity to the admin_index.php file. 
