@@ -9,15 +9,15 @@ DROP TABLE deductions;
 DROP TABLE wages;
 
 CREATE TABLE employee(
-employeeno  	    INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+employeeno  	     INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
 pincode            INT NOT NULL,
-fname    	       VARCHAR(255) NOT NULL,
-lname		          VARCHAR(255) NOT NULL,
-pera        	    FLOAT(2) DEFAULT 2000.00 NOT NULL,
-dateofHiring	    DATE NOT NULL,
+fname    	         VARCHAR(255) NOT NULL,
+lname		           VARCHAR(255) NOT NULL,
+pera        	     FLOAT(2) DEFAULT 2000.00 NOT NULL,
+dateofHiring	     DATE NOT NULL,
 dateofRetirement   DATE,
-position	          VARCHAR(255) NOT NULL,
-taxCode		       VARCHAR(255) DEFAULT 'Single' NOT NULL,
+position	         VARCHAR(255) NOT NULL,
+taxCode		         VARCHAR(255) DEFAULT 'Single' NOT NULL,
 exempted_amount    FLOAT(2) DEFAULT 50000 NOT NULL
 );
 
@@ -49,14 +49,14 @@ FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
 CREATE TABLE dtr(
 reference_number          INT NOT NULL Unique Primary Key,
 employeeno                INT,
-date   	                 DATE NOT NULL,
+date   	                  DATE NOT NULL,
 timeIn                    TIME,
 timeOut                   TIME,
 minutesLate               TIME Default 0,
 undertime                 TIME Default 0,
 absent                    BIT NOT NULL,
-onLeave	                 BIT NOT NULL,
-cause   	                 VARCHAR(255),
+onLeave	                  BIT NOT NULL,
+cause   	                VARCHAR(255),
 division_action 	        VARCHAR(255),
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
