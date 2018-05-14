@@ -1,7 +1,7 @@
 div.container {
     width: 100%;
-	height:100%;
-background-color: #D5DDFF;
+	height:754px;
+	background-color:white;
 
 }
 
@@ -9,34 +9,31 @@ body{
     font-family: Quicksand,courier;
     font-weight: normal;
     color: white;
-	background-color: #D5DDFF;
+	background-color: #3545A0;
+    
 }
 
 header {
-	padding:4px;
+    padding: 1em;
 	margin-left: -10px;
-	margin-top: 0px;
-	width:100%;
+	margin-top: -8px;
     color: white;
     background-color: #3545A0;
     clear: left;
-	font-size:50px;
-	text-align:right;
-	position:fixed;
-	z-index:9999;
+    text-align: center;
+	overflow:hidden;
 	
 }
 
 nav {
     float: left;
-	position:fixed;
 	height: 100%;
-    width: 230px;
+    width: 300px;
     margin-left: -10px;
-	margin-top:30px;
     padding: 1em;
 	background-color: #7193DE;
 	text-align: center;
+	overflow:hidden;
 }
 
 nav ul {
@@ -48,27 +45,16 @@ nav ul a {
     text-decoration: none;
 }
 
-hr
-{
-	border-color: #3545A0;
-	background-color: #3545A0;
-}
-
-.side
-{
-	padding: 40px;
-}
-
 .side a 
 {
 	display:block;
 	text-transform:uppercase;
 	color: #f2f2f2;
 	text-align: center;
-	padding: 10px;
+	padding: 14px 50px;
 	text-decoration: none;
 	font-size: 17px;
-	letter-spacing:2px;
+	letter-spacing:3px;
 	background-color: #5060CC;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -83,29 +69,19 @@ hr
     cursor: pointer;
 }
 
-#logout
-{
-	background-color: #D5DDFF;
-	margin-top:280px;
-}
-
-#logout:hover
-{
-	color: #black;
-	background-color: white;
-	margin-top:280px;
-}
 
 article 
 {
     margin-left: 320px;
     padding: 30px;
-	color: #181F4A;
+	color: black;
     font-size: 20px;
-	overflow:hidden;
+    overflow-y:scroll;
+    height: 80%
 }
 
 .topnav {
+  overflow: auto;
   background-color: #3545A0;
   text-transform:uppercase;
 }
@@ -113,30 +89,54 @@ article
 .topnav ul
 {
 	display:inline-block;
-	
+}
+
+.topnav a 
+{
+	margin-top:5px;
+	margin-bottom:10px;
+	margin-left:70px;
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 50px;
+	text-decoration: none;
+	font-size: 17px;
+	letter-spacing:3px;
+	background-color: #5060CC;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	overflow:auto;
+}
+
+.topnav a:hover {
+  background-color: #D5DDFF;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #BFD3FF;
+  color: #3545A0;
 }
 
 h1{
     font-size: 50px;
     font-weight: bolder;
-	text-transform:uppercase;
 }
 h2{
     font-size: 25px;
     text-decoration:underline;
     font-weight: bolder;
-	text-transform:uppercase;
-
 }
 table{
-    display: block;
+    display:block;
     overflow-y: scroll;
     border: 5px solid white;
     background-color: 7193DE; 
     color: white; 
     margin: 0 auto;
-    width: 67%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 tr:nth-child(even){

@@ -66,7 +66,7 @@ btn{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
 }
-input[type=button] {
+input[type=button], input[type=submit] {
     display: block;
     font-family: Quicksand,courier;
     border-color: rgba(0, 0, 0, 0.0);
@@ -83,9 +83,9 @@ input[type=button] {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
 }
-btn:active, input[type=button]:active{
+btn:active, input[type=button]:active, input[type=submit]:active{
     transform: translateY(4px);
 }
-btn:hover, input[type=button]:hover{
+btn:hover, input[type=button]:hover, input[type=submit]:hover{
     background-color: D5DDFF;
 }

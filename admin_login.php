@@ -1,30 +1,47 @@
+<?php
+session_start();
+$logins = array('7' => '0934','8' => '5937');
+$username = isset($_POST['userno']) ? $_POST['userno'] : '';
+$password = isset($_POST['password']) ? $_POST['password'] : '';
+if (isset($logins[$username]) && $logins[$username] == $password) {
+  $_SESSION['userdata']['username']=$logins[$username];
+  header("location: admin_index.php");
+  exit;
+}
+else {
+  $msg="<span style='color:red;'>Invalid Login Details</span>";
+}
+?>
 <html>
     <head>
         <meta charset="utf-8">
         <link href="reset.css" rel="stylesheet">
         <link href="style_login.css" rel="stylesheet">
-        <title>Teacher Login</title> 
+        <title>Admin Login</title> 
     </head>
     <body onload = "startTime()">
         <div id = "SplashScreen">
             <div id = "Time"></div>
-            <h1 id = "Logo">Teacher Login</h1>
-            <form action = "teacher_attendance.php" method = "post">
+            <h1 id = "Logo">Admin Login</h1>
+            <form action="" method="post">
                 <div id = "user">
-                    <label for="tno">Teacher Number</label>
-                    <input type="text" id="tno" name="teacherno" placeholder="Please input your teacher number...">
+                    <label for="uno">User Number</label>
+                    <input type="text" id="uno" name="userno" placeholder="Please input your user number...">
                 </div>
                 <div id = "pass">
-                    <label for="pin">Pin Code</label>
-                    <input type="password" id="pin" name="password" placeholder="Please input your pin code...">
+                    <label for="pword">Password</label>
+                    <input type="password" id="pword" name="password" placeholder="Please input your password...">
                 </div>
                 <div id = "buttons">
                     <btn id = "Back">
                         <a href="index.html">Back</a>
                     </btn>
-                    <a href="index.html">
-                        <input type="button" value="Login"/>
-                    </a>
+                   
+                        <input type="submit" name="submit" value="Log In">
+        <?php if(isset($msg) && isset($_POST['submit'])) {?>
+        <div class="error"><?php echo $msg;?></div>
+         <?php } ?>
+               
                 </div>
             </form>
         </div>

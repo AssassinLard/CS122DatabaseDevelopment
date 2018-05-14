@@ -41,3 +41,23 @@ btn:hover{
 #buttons{
     margin-top: 50px;
 }
+h1{
+    padding: 100px;
+    text-align: center;
+    font-size: 50px;
+}
+table{
+    border: 10px;
+    border-color: white;
+    margin: 0 auto;
+}
+th{
+    border-color: white;
+}
+td{
+    padding: 10px;
+}
+#attendance{
+    display: block;
+    margin: auto;
+    text-align: center;
