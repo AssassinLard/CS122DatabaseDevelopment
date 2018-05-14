@@ -1,23 +1,23 @@
 DROP DATABASE dtrdb;
 CREATE DATABASE dtrdb;
 USE dtrdb;
-
+/*
 DROP TABLE employee;
 DROP TABLE dtr;
 DROP TABLE payroll;
 DROP TABLE deductions;
 DROP TABLE wages;
+*/
 
 CREATE TABLE employee(
-employeeno  	     INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
-pincode            INT NOT NULL,
-fname    	         VARCHAR(255) NOT NULL,
-lname		           VARCHAR(255) NOT NULL,
-pera        	     FLOAT(2) DEFAULT 2000.00 NOT NULL,
-dateofHiring	     DATE NOT NULL,
+employeeno  	   INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+pincode            VARCHAR(255) NOT NULL,
+fname    	       VARCHAR(255) NOT NULL,
+lname		       VARCHAR(255) NOT NULL,
+dateofHiring	   DATE NOT NULL,
 dateofRetirement   DATE,
-position	         VARCHAR(255) NOT NULL,
-taxCode		         VARCHAR(255) DEFAULT 'Single' NOT NULL,
+position	       VARCHAR(255) NOT NULL,
+taxCode		       VARCHAR(255) DEFAULT 'Single' NOT NULL,
 exempted_amount    FLOAT(2) DEFAULT 50000 NOT NULL
 );
 
@@ -32,7 +32,6 @@ CREATE TABLE wages(
 employeeno              INT, 
 baseSalary	            FLOAT(2) DEFAULT 0 NOT NULL,
 pera_compensation       FLOAT(2) NOT NULL,
-gross_compensation      FLOAT(2) NOT NULL,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
@@ -40,53 +39,45 @@ CREATE TABLE payroll(
 employeeno              INT,
 codeDescription         INT,
 basic_deduction         FLOAT(2) DEFAULT 0,
-pera_compensation       FLOAT(2) DEFAULT 0,
 PRIMARY KEY (employeeno, codeDescription), 
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno),
 FOREIGN KEY(codeDescription) REFERENCES deductions(codeDescription)
 );
 
 CREATE TABLE dtr(
-reference_number          INT NOT NULL Unique Primary Key,
+reference_number          INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
 employeeno                INT,
 date   	                  DATE NOT NULL,
-timeIn                    TIME,
-timeOut                   TIME,
-minutesLate               TIME Default 0,
-undertime                 TIME Default 0,
-absent                    BIT NOT NULL,
-onLeave	                  BIT NOT NULL,
-cause   	                VARCHAR(255),
-division_action 	        VARCHAR(255),
+timeReg                   TIME,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
 INSERT INTO employee 
-VALUES (NULL, 0101, "JACO","ABAT", 2009.00,'2018-04-28','2028-04-29',"FACULTY","SINGLE", 45000.00 );
+VALUES (001, 0101, "JACO","ABAT",'2018-04-28','2018-04-29',"FACULTY","SINGLE", 45000.00 );
 
 INSERT INTO employee 
-VALUES (NULL, 1212, 'BRIAN','PACIA', 2108.00,'2017-03-27','2025-05-30','FACULTY','MARRIED', 50001 );
+VALUES (002, 1212, 'BRIAN','PACIA', '2017-03-27','2019-05-30','FACULTY','MARRIED', 50001 );
 
 INSERT INTO employee 
-VALUES (NULL, 1234, 'OWEN','MEDINA', 4607.00,'2016-02-26',null,'FACULTY', 'MARRIED', 52023 );
+VALUES (003, 1234, 'OWEN','MEDINA', '2016-02-26',null,'FACULTY', 'MARRIED', 52023 );
 
 INSERT INTO employee 
-VALUES (NULL, 5678,'ANDREA','ANG', 4806.00,'2015-01-25','2021-07-02','FACULTY','SINGLE', 48204);
+VALUES (004, 5678,'ANDREA','ANG', '2015-01-25','2021-07-02','FACULTY','SINGLE', 48204);
 
 INSERT INTO employee 
-VALUES (NULL, 9012, 'PIEL','ARCILLA', 2405.00,'2014-12-20','2022-08-03','FACULTY','SINGLE', 37708 );
+VALUES (005, 9012, 'PIEL','ARCILLA', '2014-12-20','2022-08-03','FACULTY','SINGLE', 37708 );
 
 INSERT INTO employee 
-VALUES (NULL, 3456, 'STEPHANIE','ROBLES', 2504.00,'2013-11-19','2023-09-04','FACULTY','MARRIED', 38963);
+VALUES (006, 3456, 'STEPHANIE','ROBLES', '2013-11-19','2023-09-04','FACULTY','MARRIED', 38963);
 
 INSERT INTO employee 
-VALUES (NULL, 0934, 'GOMER','ABESAMIS', 2603.00,'2012-10-18','2024-10-05','ADMIN','WIDOWER', 53198 );
+VALUES (007, 0934, 'GOMER','ABESAMIS', '2012-10-18','2024-10-05','ADMIN','WIDOWER', 53198 );
 
 INSERT INTO employee 
-VALUES (NULL, 5937, 'KRISTI','INGCO', 2802.00,'2011-09-17','2025-11-06','ADMIN','WIDOW', 54000);
+VALUES (008, 5937, 'KRISTI','INGCO', '2011-09-17','2025-11-06','ADMIN','WIDOW', 54000);
 
 INSERT INTO employee 
-VALUES (NULL, 0321, 'KENNETH','ALOG', 2301.00,'2010-08-16','2023-12-20','FACULTY','MARRIED', 41101 );
+VALUES (009, 0321, 'KENNETH','ALOG', '2010-08-16','2023-12-20','FACULTY','MARRIED', 41101 );
 
 
 INSERT INTO deductions  
@@ -118,93 +109,102 @@ VALUES (108, '2018-09-17', '2019-08-23', 850.00);
 
 
 INSERT INTO wages 
-VALUES (001, 19850.00, 2000.00, 21850.00);
+VALUES (001, 19850.00, 2000.00);
 
 INSERT INTO wages 
-VALUES (002, 17750.00, 1330.00, 20080.00);
+VALUES (002, 17750.00, 1330.00);
 
 INSERT INTO wages 
-VALUES (003, 18220.00, 1200.00, 19420.00);
+VALUES (003, 18220.00, 1200.00);
 
 INSERT INTO wages 
-VALUES (004, 18150.00, 1000.00, 19150.00);
+VALUES (004, 18150.00, 1000.00);
 
 INSERT INTO wages 
-VALUES (005, 19850.00, 1300.00, 21150.00);
+VALUES (005, 19850.00, 1300.00);
 
 INSERT INTO wages  
-VALUES (006, 20250.00, 2200.00, 22450.00);
+VALUES (006, 20250.00, 2200.00);
 
 INSERT INTO wages 
-VALUES (007, 21950.00, 1000.00, 22950.00);
+VALUES (007, 21950.00, 1000.00);
 
 INSERT INTO wages 
-VALUES (008, 17850.00, 1450.00, 19300.00);
+VALUES (008, 17850.00, 1450.00);
 
 INSERT INTO wages 
-VALUES (009, 18750.00, 2300.00, 21050.00);
+VALUES (009, 18750.00, 2300.00);
 
 
 INSERT INTO payroll 
-VALUES (001, 108, 850.00, 2000.00);
+VALUES (001, 108, 850.00);
 
 INSERT INTO payroll 
-VALUES (002, 101, 2765.00, 1330.00);
+VALUES (002, 101, 2765.00);
 
 INSERT INTO payroll 
-VALUES (003, 103, 1220.50, 1200.00);
+VALUES (003, 103, 1220.50);
 
 INSERT INTO payroll 
-VALUES (004, 102, 990.00, 1000.00);
+VALUES (004, 102, 990.00);
 
 INSERT INTO payroll 
-VALUES (005, 106, 850.00, 1300.00);
+VALUES (005, 106, 850.00);
 
 INSERT INTO payroll 
-VALUES (006, 104,600.00, 2200.00);
+VALUES (006, 104,600.00);
 
 INSERT INTO payroll 
-VALUES (007, 100, 1767.50, 1000.00);
+VALUES (007, 100, 1767.50);
 
 INSERT INTO payroll 
-VALUES (008, 105, 2000.00, 1450.00);
+VALUES (008, 105, 2000.00);
 
 INSERT INTO payroll 
-VALUES (009, 107, 1000.00, 2300.00);
+VALUES (009, 107, 1000.00);
 
 
-INSERT INTO dtr
-VALUES (001, 001, '2018-02-01', '10:55:00', '18:35:00', 0, 0, 0, 0, null, null);
+INSERT INTO dtr 
+VALUES (NULL, 001, '2018-02-01', '10:55:00');
 
-INSERT INTO dtr
-VALUES (002, 002, '2018-02-01', '11:25:00', '18:32:00', 0 ,0, 0, 0, null, null);
+INSERT INTO dtr 
+VALUES (NULL, 001, '2018-02-01', '18:35:00');
 
-INSERT INTO dtr
-VALUES (003, 003, '2018-02-01', '11:13:00', '16:30:00', 0, '02:00:00', 0, 0, 'Due to sickness', 'Ask for proof or documentation');
+INSERT INTO dtr 
+VALUES (NULL, 002, '2018-02-01', '11:25:00');
 
-INSERT INTO dtr
-VALUES (011, 001, '2018-02-02', '11:40:00', '18:33:00', '00:10:00', 0, 0, 0, null, 'Give warning');
-
-INSERT INTO dtr
-VALUES (012, 002, '2018-02-02', '11:27:00', '18:35:00', 0, 0, 0, 0, null, null);
-
-INSERT INTO dtr
-VALUES (013, 003, '2018-02-02', 0, 0, 0, 0, 1, 0, 'Due to sickness', 'Ask for proof or documentation');
-
-INSERT INTO dtr
-VALUES (021, 001, '2018-02-03', '11:28:00', '17:30:00', 0, '01:00:00', 0, 0, null , 'Give warning'); 
-
-INSERT INTO dtr
-VALUES (022, 002, '2018-02-03', 0, 0, 0, 0, 1, 0, 'Due to death in family', 'Ask for proof or documentation');
-
-INSERT INTO dtr
-VALUES (023, 003, '2018-02-03', '11:50:00', '18:32:00', '00:20:00', 0, 0, 0, null, 'Give tardiness warning');
+INSERT INTO dtr 
+VALUES (NULL, 002, '2018-02-01', '18:32:00');
 
 
+/*
+INSERT INTO dtr 
+VALUES (NULL, 003, '2018-02-01', '11:13:00', '16:30:00', 0, '02:00:00', 0, 0, 'Due to sickness', 'Ask for proof or documentation');
+
+INSERT INTO dtr 
+VALUES (NULL, 001, '2018-02-02', '11:40:00', '18:33:00', '00:10:00', 0, 0, 0, null, 'Give warning');
+
+INSERT INTO dtr 
+VALUES (NULL, 002, '2018-02-02', '11:27:00', '18:35:00', 0, 0, 0, 0, null, null);
+
+INSERT INTO dtr 
+VALUES (NULL, 003, '2018-02-02', 0, 0, 0, 0, 1, 0, 'Due to sickness', 'Ask for proof or documentation');
+
+INSERT INTO dtr 
+VALUES (NULL, 001, '2018-02-03', '11:28:00', '17:30:00', 0, '01:00:00', 0, 0, null , 'Give warning'); 
+
+INSERT INTO dtr 
+VALUES (NULL, 002, '2018-02-03', 0, 0, 0, 0, 1, 0, 'Due to death in family', 'Ask for proof or documentation');
+
+INSERT INTO dtr 
+VALUES (NULL, 003, '2018-02-03', '11:50:00', '18:32:00', '00:20:00', 0, 0, 0, null, 'Give tardiness warning');
+
+*/
 -- Extra Values:
+/*
 
 INSERT INTO employee 
-VALUES (010, 6834,'NIGEL', 'YU','2910', '2012-07-15',null,'FACULTY', 'WIDOWER', 42593);
+VALUES (010, 6834,'NIGEL' ,'YU','2910', '2012-07-15',null,'FACULTY', 'WIDOWER', 42593);
 
 INSERT INTO employee 
 VALUES (011, 2784,'JAKE','CHENG', '4020','2014-06-14','2019-02-18','FACULTY','MARRIED',35000 );
@@ -281,3 +281,5 @@ VALUES (014, '2018-02-01', '11:30:00', '18:30:00', 0, 0, 0);
 
 INSERT INTO dtr
 VALUES (015, '2018-02-01', '11:29:00, '18:31:30', 0, 0, 0);
+*/
+
