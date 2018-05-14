@@ -17,7 +17,6 @@ lname		       VARCHAR(255) NOT NULL,
 dateofHiring	   DATE NOT NULL,
 dateofRetirement   DATE,
 position	       VARCHAR(255) NOT NULL,
-startingTime	   TIME,
 taxCode		       VARCHAR(255) DEFAULT 'Single' NOT NULL,
 exempted_amount    FLOAT(2) DEFAULT 50000 NOT NULL
 );
