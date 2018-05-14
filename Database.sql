@@ -49,8 +49,7 @@ CREATE TABLE dtr(
 reference_number          INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
 employeeno                INT,
 date   	                  DATE NOT NULL,
-timeIn                    TIME,
-timeOut					  TIME,
+timeReg                   TIME,
 FOREIGN KEY(employeeno) REFERENCES employee(employeeno)
 );
 
@@ -167,16 +166,16 @@ VALUES (009, 107, 1000.00);
 
 
 INSERT INTO dtr 
-VALUES (NULL, 001, '2018-02-01', '11:55:00', '18:35:00');
+VALUES (NULL, 001, '2018-02-01', '10:55:00');
 
 INSERT INTO dtr 
-VALUES (NULL, 002, '2018-02-01', '11:45:00', '18:32:00');
+VALUES (NULL, 001, '2018-02-01', '18:35:00');
 
 INSERT INTO dtr 
-VALUES (NULL, 003, '2018-02-01', '11:25:00', '18:30:00');
+VALUES (NULL, 002, '2018-02-01', '11:25:00');
 
-INSERT INTO dtr
-VALUES (NULL, 004, '2018-02-01', '11:50:00', '18:30:00');
+INSERT INTO dtr 
+VALUES (NULL, 002, '2018-02-01', '18:32:00');
 
 /*
 INSERT INTO dtr 
